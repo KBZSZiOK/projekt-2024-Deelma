@@ -1,0 +1,126 @@
+body{
+  overflow: hidden;
+}
+
+#allshi{
+  display: flex;
+  flex-direction: column;
+  font-family: Arial;
+  height: 100vh;
+  width: 100vw;
+}
+
+header{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content:center;
+  background-color: rgba(166, 45, 236, 0.678);
+  border: solid red 1px;
+  height: 30vh;
+  width: 100vw;
+  position: sticky;
+}
+
+nav{
+  border: solid blue 1px;
+  height: 57vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow-x: scroll;
+  position: sticky;
+}
+
+footer{
+  overflow: hidden;
+  display: flex;
+  background-color: rgba(166, 45, 236, 0.678);
+  border: solid green 1px;
+  height: 7vh;
+  width: 100vw;
+  position: sticky;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+h1{
+  margin: 0;
+  padding: 0;
+  font-size: 10vh;
+  position: sticky;
+  margin: auto;
+}
+
+h2{
+  margin: 0;
+  padding: 0;
+  border: dashed black 1px;
+  font-size: 5vh;
+}
+
+h3{
+  margin: 0;
+  padding: 0;
+  font-size: 5vh;
+}
+
+h4{
+  margin: 0;
+  padding: 0;
+  font-size: 2vh;
+}
+
+#logomale{
+  width: 16vh;
+  border-radius: 10%;
+  border: groove #a62decad 1vh;
+  float: right;
+}
+
+#logoduze{
+  width: 18%;
+  border-radius: 10%;
+  border: groove rgba(166, 45, 236, 0.678) 1vh;
+}
+
+@media screen and (min-width: 500px) {
+  nav{
+    background-color: rgba(166, 45, 236, 0.13);
+    flex-direction: column;
+    overflow-x: auto;
+  }
+
+  header{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 18vh;
+  }
+
+  nav{
+    position: sticky;
+    flex-wrap: nowrap;
+    height: 66vh;
+  }
+
+  footer{
+    position: sticky;
+    height: 10vh;
+  }
+
+  #logomale{
+    position: sticky;
+  }
+
+  #logoduze{
+    width: 18%;
+  }
+
+  h4{
+    font-size: 3vh;
+  }
+}
