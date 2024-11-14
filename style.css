@@ -35,6 +35,11 @@ nav{
   position: sticky;
 }
 
+#animacja{
+  background-color: black;
+  color: white;
+}
+
 footer{
   overflow: hidden;
   display: flex;

@@ -11,12 +11,11 @@
     <header>
         <img id="logomale" src="yecinema.png" alt="LOGO">
         <h1>YeCinema</h1>
-        <h3><a href="index.php">Strona główna</a></h3><br>
-        <h3><a href="tabele.php">Baza danych</a></h3><br>
+        <a href="index.php">Strona główna</a><br>
+        <a href="tabele.php">Baza danych</a><br>
     </header>
     <nav>
         <h2><b>Witamy w YeCinema!</b></h2><br>
-
         <form method="post" >
             <br>
             <h2>Dodaj film</h2>
@@ -25,7 +24,13 @@
             Czas trwania: <input type="number" min="0" name="czas_trwania"><br>
             <input type="submit" value="dodaj"><br><br>
         </form>
+        
     </nav>
+    
+    <div id="animacja">
+        <marquee behavior="reverse" id="animacja" scrollamount="11">
+                    Lorem ipsum dolor sit amet cosik.
+        </marquee>
     <footer>
         <h4>2024 Playboy Carti<br>
         <b>Strone wykonał: Nikodem Warmowski</b></h4>
@@ -33,30 +38,3 @@
     </div>
 </body>
 </html>
-
-<?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "kino_4tig1";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-$tytul = $_POST['tytul'];
-$rezyser = $_POST['rezyser'];
-$czas_trwania = $_POST['czas_trwania'];
-
-$sql = "INSERT INTO filmy (tytul, rezyser, czas_trwania) VALUES ('$tytul', '$rezyser', '$czas_trwania')";
-
-if(mysqli_query($conn, $sql)){
-    echo "Rekordy dodane.";
-}else{
-    echo "ERROR" . mysqli_error($conn);
-}
-
-?> 
