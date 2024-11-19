@@ -15,7 +15,7 @@ header{
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content:center;
+  justify-content: center;
   background-color: rgba(166, 45, 236, 0.678);
   border: solid red 1px;
   height: 30vh;
@@ -84,10 +84,9 @@ form{
 }
 
 #logomale{
-  width: 16vh;
+  width: 16%;
   border-radius: 10%;
   border: groove #a62decad 1vh;
-  float: right;
 }
 
 #logoduze{
@@ -104,8 +103,9 @@ form{
   }
 
   header{
-    flex-direction: row;
-    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
     height: 18vh;
   }
 
@@ -122,7 +122,7 @@ form{
   }
 
   #logomale{
-    position: sticky;
+    float: left;
   }
 
   #logoduze{
