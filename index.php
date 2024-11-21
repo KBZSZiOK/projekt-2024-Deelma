@@ -16,7 +16,7 @@
     </header>
     <nav>
         <h2><b>Witamy w YeCinema!</b></h2><br>
-        <form method="post" >
+        <form method="post">
             <h2>Dodaj film</h2>
             Tytuł: <input type="text" name="tytul"><br>
             Reżyser: <input type="text" name="rezyser"><br>
@@ -28,10 +28,15 @@
         <marquee behavior="reverse" id="animacja" scrollamount="11">
                     Lorem ipsum dolor sit amet cosik.
         </marquee>
+    </div>
     <footer>
         <h4>2024 Playboy Carti<br>
         <b>Strone wykonał: Nikodem Warmowski</b></h4>
     </footer>
-    </div>
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const marquee = document.getElementById('animacja');
+});
+</script>
 </html>

@@ -44,30 +44,35 @@
         $comm = "SELECT * FROM bilety";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
+            echo "bilety:<br>";
          while($row = $result->fetch_assoc()){
-             echo "id: " . $row["id"] . " |  seans_id: " . $row["seans_id"] . " | id sprzedawcy: " . $row["sprzedawca_id"] . " | klient_id: " . $row["klient_id"] . " | cena: " . $row["cena"] . "<br>";
+             echo  "id: " . $row["id"] . " |  seans_id: " . $row["seans_id"] . " | id sprzedawcy: " . $row["sprzedawca_id"] . " | klient_id: " . $row["klient_id"] . " | cena: " . $row["cena"] . "<br>";
          }
      }
-    }elseif($_POST["tabela"] == "filmy"){
+    }else if($_POST["tabela"] == "filmy"){
         $comm = "SELECT * FROM filmy";
         $result = $conn->query($comm);
+        echo "filmy:<br>";
         if($result->num_rows > 0){
+            echo "filmy:<br>";
          while($row = $result->fetch_assoc()){
              echo "id: " . $row["id"] . " | tytuł: " . $row["tytul"] . " | rezyser: " . $row["rezyser"] . " | czas_trwania: " . $row["czas_trwania"] . "<br>";
          }
      }
-    }elseif($_POST["tabela"] == "filmy_rodzaj"){
+    }else if($_POST["tabela"] == "filmy_rodzaj"){
         $comm = "SELECT * FROM filmy_rodzaj";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
+            echo "filmy_rodzaj:<br>";
          while($row = $result->fetch_assoc()){
              echo "id: " . $row["id"] . " | filmy_id: " . $row["filmy_id"] . " | rodzaj_id: " . $row["rodzaj_id"];
          }
      }
-    }elseif($_POST["tabela"] == "klienci"){
+    }else if($_POST["tabela"] == "klienci"){
         $comm = "SELECT * FROM klienci";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
+            echo "klienci:<br>";
          while($row = $result->fetch_assoc()){
              echo "id: " . $row["id"] . " | imie: " . $row["imie"] . " | nazwisko: " . $row["nazwisko"] . " | mail: " . $row["mail"] . "<br>";
          }
@@ -76,6 +81,7 @@
         $comm = "SELECT * FROM rodzaj_filmu";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
+            echo "rodzaj_filmu:<br>";
          while($row = $result->fetch_assoc()){
              echo "id: " . $row["id"] . " | nazwa: " . $row["nazwa"] . "<br>";
          }
@@ -84,6 +90,7 @@
         $comm = "SELECT * FROM sale";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
+            echo "sale:<br>";
          while($row = $result->fetch_assoc()){
              echo "id: " . $row["id"] . " | ilosc miejsc: " . $row["ilosc_miejsc"] . "<br>";
          }
@@ -92,6 +99,7 @@
         $comm = "SELECT * FROM seanse";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
+            echo "seanse:<br>";
          while($row = $result->fetch_assoc()){
              echo "id: " . $row["id"] . " | termin: " . $row["termin"] . " | sala_id: " . $row["sala_id"] . " | film_id: " . $row["film_id"] . " | liczba_wolnych_miejsc: " . $row["liczba_wolnych_miejsc"] . "<br>";
          }
@@ -100,6 +108,7 @@
         $comm = "SELECT * FROM sprzedawcy";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
+            echo "sprzedawcy:<br>";
          while($row = $result->fetch_assoc()){
              echo "id: " . $row["id"] . " | imie: " . $row["imie"] . " | nazwisko: " . $row["nazwisko"]  . "<br>";
          }
@@ -112,11 +121,12 @@
      <div id="animacjaa">
         <marquee behavior="reverse" id="animacja" scrollamount="11">
                     Lorem ipsum dolor sit amet cosik.
-        </marquee>
+        </marquee> 
+    </div>
     <footer>
         <h4>2024 Playboy Carti<br>
         <b>Strone wykonał: Nikodem Warmowski</b></h4>
     </footer>
-    </div>
+   
 </body>
 </html>
