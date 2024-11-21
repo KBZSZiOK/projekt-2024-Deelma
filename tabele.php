@@ -17,7 +17,7 @@
         <h2><b>Witamy w YeCinema!</b></h2><br>
         <form method="post">
             <h2>Wyswietl tabele</h2>
-            <select name="tabele">
+            <select name="tabela">
                 <option value="bilety">bilety</option>
                 <option value="filmy">filmy</option>
                 <option value="filmy_rodzaj">filmy_rodzaj</option>
@@ -39,8 +39,8 @@
         if($conn->connect_error){
             die("Błąd połączenia: " . $conn->connect_error);
         }else{
- 
-     if($_POST["tabele"] == "bilety"){
+ if(isset($_POST["tabela"])){
+     if($_POST["tabela"] == "bilety"){
         $comm = "SELECT * FROM bilety";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
@@ -49,26 +49,25 @@
              echo  "id: " . $row["id"] . " |  seans_id: " . $row["seans_id"] . " | id sprzedawcy: " . $row["sprzedawca_id"] . " | klient_id: " . $row["klient_id"] . " | cena: " . $row["cena"] . "<br>";
          }
      }
-    }else if($_POST["tabela"] == "filmy"){
+    }elseif($_POST["tabela"] == "filmy"){
         $comm = "SELECT * FROM filmy";
         $result = $conn->query($comm);
-        echo "filmy:<br>";
         if($result->num_rows > 0){
             echo "filmy:<br>";
          while($row = $result->fetch_assoc()){
              echo "id: " . $row["id"] . " | tytuł: " . $row["tytul"] . " | rezyser: " . $row["rezyser"] . " | czas_trwania: " . $row["czas_trwania"] . "<br>";
          }
      }
-    }else if($_POST["tabela"] == "filmy_rodzaj"){
+    }elseif($_POST["tabela"] == "filmy_rodzaj"){
         $comm = "SELECT * FROM filmy_rodzaj";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
             echo "filmy_rodzaj:<br>";
          while($row = $result->fetch_assoc()){
-             echo "id: " . $row["id"] . " | filmy_id: " . $row["filmy_id"] . " | rodzaj_id: " . $row["rodzaj_id"];
+             echo "id: " . $row["id"] . " | filmy_id: " . $row["filmy_id"] . " | rodzaj_id: " . $row["rodzaj_id"] . "<br>";
          }
      }
-    }else if($_POST["tabela"] == "klienci"){
+    }elseif($_POST["tabela"] == "klienci"){
         $comm = "SELECT * FROM klienci";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
@@ -95,7 +94,7 @@
              echo "id: " . $row["id"] . " | ilosc miejsc: " . $row["ilosc_miejsc"] . "<br>";
          }
      }
-    }elseif($_POST["tabele"] == "seanse"){
+    }elseif($_POST["tabela"] == "seanse"){
         $comm = "SELECT * FROM seanse";
         $result = $conn->query($comm);
         if($result->num_rows > 0){
@@ -114,6 +113,7 @@
          }
      }
     }
+}
 }
  
 ?>
