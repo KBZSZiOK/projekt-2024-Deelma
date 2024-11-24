@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let szerokosc = animacja.offsetWidth;
     let szerokosccontent = animacjacontent.offsetWidth;
     let startPos = szerokosc;
-    const predkosc = 2;  // Prędkość przesuwania w px
+    const predkosc = 2; 
 
     function animation() {
         start -= predkosc;
